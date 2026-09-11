@@ -1,6 +1,8 @@
+import "../styles/sections/Leadership.css";
+
 function Leadership() {
   return (
-    <section id="leadership">
+    <section id="leadership" className="leadership">
       Organizations & Leadership
     </section>
   );

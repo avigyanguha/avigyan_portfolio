@@ -1,6 +1,8 @@
+import "../styles/sections/Hero.css";
+
 function Hero() {
   return (
-    <section id="home">
+    <section id="home" className="hero">
       Hero Section
     </section>
   );
