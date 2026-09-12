@@ -1,4 +1,6 @@
 import "../styles/sections/Hero.css";
+import { TextEffect } from "@/ui/text-effect";
+import { motion } from "motion/react";
 
 const ArrowUpRightIcon = () => (
   <svg
@@ -46,21 +48,53 @@ function Hero() {
 
       <div className="hero__content">
         <div className="hero__text-group">
-          <h1 className="hero__title">
-            HI, I AM AVIGYAN GUHA.
-          </h1>
 
-          <p className="hero__description">
+          {/* HERO TITLE */}
+          <TextEffect
+            as="h1"
+            className="hero__title"
+            preset="slide"
+            per="char"
+            speedReveal={1}
+            speedSegment={1}
+          >
+            HI, I AM AVIGYAN GUHA.
+          </TextEffect>
+
+          {/* DESCRIPTION */}
+          <TextEffect
+            as="p"
+            className="hero__description"
+            preset="fade-in-blur"
+            per="word"
+            delay={0.45}
+          >
             I build focused frontend experiences and am growing toward full-stack
             development through practical, deliberate work.
-          </p>
+          </TextEffect>
+
         </div>
 
-        <div className="hero__actions">
+        {/* BUTTONS */}
+        <motion.div
+          className="hero__actions"
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            duration: 0.5,
+            delay: 1.2,
+            ease: "easeOut",
+          }}
+        >
           <a
             href="#contact"
             className="hero__contact-button"
-            aria-label="Go to contact section"
           >
             <span className="hero__contact-text">
               Contact Me
@@ -76,7 +110,7 @@ function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="hero__social-button"
-            aria-label="Visit Avigyan Guha's LinkedIn profile"
+            aria-label="LinkedIn"
           >
             <LinkedInIcon />
           </a>
@@ -86,11 +120,12 @@ function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             className="hero__social-button"
-            aria-label="Visit Avigyan Guha's GitHub profile"
+            aria-label="GitHub"
           >
             <GitHubIcon />
           </a>
-        </div>
+        </motion.div>
+
       </div>
     </section>
   );
