@@ -6,7 +6,7 @@ export interface Skill {
 export const skills: Skill[] = [
   {
     name: "C",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+    icon: "src/assets/icons/c.png",
   },
   {
     name: "Python",
@@ -54,6 +54,6 @@ export const skills: Skill[] = [
   },
   {
     name: "Canva",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg",
+    icon: "src/assets/icons/canva.png",
   },
 ];

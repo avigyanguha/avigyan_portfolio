@@ -1,2 +1,388 @@
+@import "@fontsource/fredoka/600.css";
+@import "@fontsource/fredoka/700.css";
+
 .skills {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #ffffff;
+  padding: 70px 40px 90px;
+}
+
+/* =========================================================
+   CONTENT CONTAINER
+   ========================================================= */
+
+.skills__container {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1320px);
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.skills__heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 62px;
+}
+
+.skills__title {
+  margin: 0;
+  color: #080808;
+  font-family: "Fredoka", sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.skills__underline {
+  display: block;
+  width: 226px;
+  height: 6px;
+  margin-top: 10px;
+  background: #4c588c;
+}
+
+
+/* =========================================================
+   SKILLS GRID
+   ========================================================= */
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 210px);
+  justify-content: center;
+  column-gap: 66px;
+  row-gap: 50px;
+}
+
+
+/* =========================================================
+   CENTER THIRD ROW
+   ========================================================= */
+
+.skill-card:nth-child(11) {
+  grid-column: 2;
+}
+
+.skill-card:nth-child(12) {
+  grid-column: 3;
+}
+
+.skill-card:nth-child(13) {
+  grid-column: 4;
+}
+
+
+/* =========================================================
+   SKILL CARD
+   ========================================================= */
+
+.skill-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 210px;
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 16px 13px;
+  background: #f5f7f5;
+  border: 0;
+  border-radius: 22px;
+  box-sizing: border-box;
+}
+
+.skill-card__spotlight-border {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 22px;
+}
+
+.skill-card__spotlight-surface {
+  position: absolute;
+  inset: 1px;
+  z-index: 2;
+  border-radius: 21px;
+  background: #f5f7f5;
+}
+
+.skill-card__icon-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 126px;
+  height: 126px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.skill-card__icon {
+  display: block;
+  width: 126px;
+  height: 126px;
+  object-fit: contain;
+}
+
+.skill-card__name {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  color: #1f1f1f;
+  font-family: "Fredoka One", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   DECORATIVE BACKGROUND SHAPES
+   ========================================================= */
+.skills__shape {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 9999px;
+}
+
+
+/* ---------------------------------------------------------
+   Green shape - left
+   --------------------------------------------------------- */
+
+.skills__shape--green {
+  width: 620px;
+  height: 520px;
+  left: -39px;
+  top: 169px;
+  background: rgba(240, 250, 199, 0.5);
+}
+
+
+/* ---------------------------------------------------------
+   Yellow shape - top right
+   --------------------------------------------------------- */
+
+.skills__shape--yellow {
+  width: 593px;
+  height: 481px;
+  right: -219px;
+  top: -217px;
+  background: rgba(255, 224, 148, 0.38);
+}
+
+
+/* ---------------------------------------------------------
+   Pink shape - bottom right
+   --------------------------------------------------------- */
+
+.skills__shape--pink {
+  width: 566px;
+  height: 430px;
+  right: -248px;
+  bottom: -198px;
+  background: rgba(255, 209, 224, 0.38);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .skills {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  /*
+     Reset the desktop third-row positioning.
+
+     At this breakpoint the grid changes from 5 columns
+     to 4 columns, so the last three cards should flow
+     normally.
+  */
+
+  .skill-card:nth-child(11),
+  .skill-card:nth-child(12),
+  .skill-card:nth-child(13) {
+    grid-column: auto;
+  }
+
+  .skills__grid {
+    grid-template-columns: repeat(4, 210px);
+    column-gap: 45px;
+    row-gap: 45px;
+  }
+
+  .skills__title {
+    font-size: 58px;
+  }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 960px) {
+  .skills {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .skills__grid {
+    grid-template-columns: repeat(3, 190px);
+    column-gap: 35px;
+    row-gap: 35px;
+  }
+
+  .skill-card {
+    width: 190px;
+    height: 190px;
+    border-radius: 20px;
+    padding-top: 18px;
+  }
+
+  .skill-card__icon-wrapper,
+  .skill-card__icon {
+    width: 112px;
+    height: 112px;
+  }
+
+  .skill-card__name {
+    font-size: 18px;
+  }
+
+  .skills__title {
+    font-size: 52px;
+  }
+
+  .skills__underline {
+    width: 190px;
+    height: 5px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .skills {
+    padding: 55px 20px 70px;
+  }
+
+  .skills__heading {
+    margin-bottom: 45px;
+  }
+
+  .skills__title {
+    font-size: clamp(38px, 9vw, 50px);
+  }
+
+  .skills__underline {
+    width: 150px;
+    height: 4px;
+    margin-top: 8px;
+  }
+
+  .skills__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+  }
+
+  .skill-card {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    min-width: 0;
+    border-radius: 18px;
+    padding: 16px 10px 12px;
+  }
+
+  .skill-card__icon-wrapper {
+    width: min(75%, 126px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .skill-card__icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  .skill-card__name {
+    font-size: clamp(14px, 3.5vw, 18px);
+  }
+
+
+  /* -------------------------------------------------------
+     Smaller decorative shapes
+     ------------------------------------------------------- */
+
+  .skills__shape--green {
+    width: 420px;
+    height: 360px;
+
+    left: -180px;
+    top: 190px;
+  }
+
+  .skills__shape--yellow {
+    width: 400px;
+    height: 330px;
+
+    right: -250px;
+    top: -150px;
+  }
+
+  .skills__shape--pink {
+    width: 400px;
+    height: 330px;
+    right: -250px;
+    bottom: -120px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .skills {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .skills__grid {
+    gap: 14px;
+  }
+
+  .skill-card {
+    border-radius: 15px;
+    padding: 13px 7px 10px;
+  }
+
+  .skill-card__name {
+    font-size: 13px;
+  }
 }
