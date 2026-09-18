@@ -1,0 +1,63 @@
+portfolio/
+├─ .git/
+├─ .gitignore
+├─ .oxlintrc.json
+├─ dist/
+├─ index.html
+├─ node_modules/
+├─ package-lock.json
+├─ package.json
+├─ README.md
+├─ public/
+│  ├─ Avigyan_Guha_Resume.pdf
+│  └─ avigyan_portfolio.png
+├─ src/
+│  ├─ App.tsx
+│  ├─ index.css
+│  ├─ main.tsx
+│  ├─ assets/
+│  │  ├─ icons/
+│  │  └─ images/
+│  ├─ components/
+│  │  ├─ Navbar.tsx
+│  │  ├─ OrganizationCard.tsx
+│  │  ├─ ProjectCard.tsx
+│  │  ├─ SectionHeading.tsx
+│  │  ├─ SkillCard.tsx
+│  │  └─ SocialLinks.tsx
+│  ├─ data/
+│  │  ├─ organizations.ts
+│  │  ├─ projects.ts
+│  │  └─ skills.ts
+│  ├─ lib/
+│  │  └─ utils.ts
+│  ├─ sections/
+│  │  ├─ About.tsx
+│  │  ├─ Contact.tsx
+│  │  ├─ Footer.tsx
+│  │  ├─ Hero.tsx
+│  │  ├─ Leadership.tsx
+│  │  ├─ Projects.tsx
+│  │  └─ Skills.tsx
+│  ├─ styles/
+│  │  ├─ components/
+│  │  │  └─ Navbar.css
+│  │  └─ sections/
+│  │     ├─ About.css
+│  │     ├─ Contact.css
+│  │     ├─ Footer.css
+│  │     ├─ Hero.css
+│  │     ├─ Leadership.css
+│  │     ├─ Projects.css
+│  │     └─ Skills.css
+│  ├─ types/
+│  │  └─ index.ts
+│  └─ ui/
+│     ├─ card_spotlight.tsx
+│     ├─ in-view.tsx
+│     ├─ spotlight.tsx
+│     └─ text-effect.tsx
+├─ tsconfig.app.json
+├─ tsconfig.json
+├─ tsconfig.node.json
+├─ vite.config.ts
