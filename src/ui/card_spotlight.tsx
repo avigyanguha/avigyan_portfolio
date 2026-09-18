@@ -12,12 +12,14 @@ export type SpotlightProps = {
   className?: string;
   size?: number;
   springOptions?: SpringOptions;
+  parentSelector?: string;
 };
 
 export function Spotlight({
   className = '',
   size = 200,
   springOptions = { bounce: 0 },
+  parentSelector,
 }: SpotlightProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -38,10 +40,12 @@ export function Spotlight({
 
   useEffect(() => {
     if (!containerRef.current) return;
-    const parent = containerRef.current.parentElement;
+    const parent = parentSelector
+      ? containerRef.current.closest(parentSelector)
+      : containerRef.current.parentElement;
     if (!parent) return;
-    setParentElement(parent);
-  }, []);
+    setParentElement(parent as HTMLElement);
+  }, [parentSelector]);
 
   const handleMouseMove = useCallback(
     (event: MouseEvent) => {

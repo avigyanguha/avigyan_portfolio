@@ -4,3 +4,12 @@ export interface Project {
   image: string;
   githubUrl: string;
 }
+
+export interface Organization {
+  name: string;
+  role: string;
+  period: string;
+  description: string;
+  logo: string;
+  tags: string[];
+}

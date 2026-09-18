@@ -36,9 +36,9 @@ portfolio/
 │  │  ├─ Contact.tsx
 │  │  ├─ Footer.tsx
 │  │  ├─ Hero.tsx
-│  │  ├─ Leadership.tsx
 │  │  ├─ Projects.tsx
-│  │  └─ Skills.tsx
+│  │  ├─ Skills.tsx
+│  │  └─ Volunteering.tsx
 │  ├─ styles/
 │  │  ├─ components/
 │  │  │  └─ Navbar.css
@@ -47,9 +47,9 @@ portfolio/
 │  │     ├─ Contact.css
 │  │     ├─ Footer.css
 │  │     ├─ Hero.css
-│  │     ├─ Leadership.css
 │  │     ├─ Projects.css
-│  │     └─ Skills.css
+│  │     ├─ Skills.css
+│  │     └─ Volunteering.css
 │  ├─ types/
 │  │  └─ index.ts
 │  └─ ui/
@@ -61,3 +61,9 @@ portfolio/
 ├─ tsconfig.json
 ├─ tsconfig.node.json
 ├─ vite.config.ts
+
+Latest updates:
+- Added the Volunteering section to App.tsx and the documented source tree.
+- Added About-style InView animations to the Skills heading and skills grid.
+- Added About-style InView animations to the Projects heading, title line, and project list.
+- Fixed the Projects title line so it renders visibly beneath the Projects heading.

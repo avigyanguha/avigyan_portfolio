@@ -1,2 +1,534 @@
-.leadership {
+@import "@fontsource/fredoka/600.css";
+@import "@fontsource/fredoka/700.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/fira-mono/700.css";
+@import "@fontsource/abeezee/400.css";
+@import "@fontsource/ibm-plex-sans/400.css";
+
+.volunteering {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #ffffff;
+    padding: 48px 40px 100px;
+}
+
+.volunteering__glow {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 9999px;
+    filter: blur(52px);
+}
+
+/* LIME — LEFT / CENTER */
+.volunteering__glow--lime {
+    width: 871px;
+    height: 785px;
+    left: -120px;
+    top: 180px;
+    background: rgba(191, 255, 89, 0.16);
+}
+
+/* YELLOW — TOP RIGHT */
+.volunteering__glow--yellow {
+    width: 720px;
+    height: 500px;
+    right: -150px;
+    top: -100px;
+    background: rgba(255, 230, 77, 0.13);
+    filter: blur(55px);
+}
+
+/* PINK — BOTTOM RIGHT */
+.volunteering__glow--pink {
+    width: 743px;
+    height: 486px;
+    right: -150px;
+    bottom: -80px;
+    background: rgba(255, 140, 184, 0.11);
+    filter: blur(52px);
+}
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+.volunteering__container {
+    position: relative;
+    z-index: 1;
+    width: min(1309px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.volunteering__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 94px;
+}
+
+.volunteering__heading h2 {
+    margin: 0;
+    color: #080808;
+    font-family: "Fredoka", sans-serif;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.1;
+    text-align: center;
+}
+
+
+/* Small line underneath heading */
+
+.volunteering__heading-line {
+    width: 200px;
+    height: 9px;
+    margin-top: 18px;
+    background: linear-gradient(90deg,
+            #051242 0%,
+            #3c4e91 100%);
+}
+
+
+/* =========================================================
+   ORGANIZATION CARD
+   ========================================================= */
+
+.organization-card {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    height: 621px;
+    overflow: visible;
+    background: rgba(235, 235, 236, 0.45);
+    border-radius: 40px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.organization-card__spotlight-border {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    overflow: hidden;
+    border-radius: 40px;
+    padding: 3px;
+    pointer-events: none;
+    -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+    mask-composite: exclude;
+}
+
+.organization-card__spotlight-surface {
+    position: absolute;
+    inset: 3px;
+    z-index: 2;
+    border-radius: 37px;
+    background: transparent;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.organization-card__content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 365px 7px minmax(0, 1fr);
+    column-gap: 40px;
+    width: 100%;
+    height: 100%;
+    padding: 43px 82px 68px;
+}
+
+
+/* =========================================================
+   LEFT COLUMN
+   ========================================================= */
+
+.organization-card__left {
+    display: flex;
+    flex-direction: column;
+    padding-top: 90px;
+}
+
+
+/* Organization name */
+
+.organization-card__name {
+    width: 330px;
+    margin: 0;
+    color: #040404;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.28;
+}
+
+
+/* Date */
+
+.organization-card__period {
+    margin: 60px 0 0;
+    color: #4d4f4d;
+    font-family: "Fira Mono", monospace;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   VERTICAL DIVIDER
+   ========================================================= */
+
+.organization-card__divider {
+    width: 7px;
+    height: 508px;
+    align-self: center;
+    background: linear-gradient(180deg,
+            #3d4036 0%,
+            #abd93a 100%);
+}
+
+
+/* =========================================================
+   RIGHT COLUMN
+   ========================================================= */
+
+.organization-card__right {
+    padding-top: 38px;
+}
+
+
+/* Role */
+
+.organization-card__role {
+    margin: 0;
+
+    color: #040404;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+/* Description */
+
+.organization-card__description {
+    width: min(485px, 100%);
+    margin: 46px 0 0;
+    color: #454745;
+    font-family: "ABeeZee", sans-serif;
+    font-size: 29px;
+    font-weight: 400;
+
+    line-height: 1.46;
+}
+
+.organization-card__logo-link {
+  position: absolute;
+  z-index: 10;
+    width: 94px;
+    height: 94px;
+  top: 27px;
+  right: 35px;
+  display: block;
+  text-decoration: none;
+}
+
+.organization-card__logo {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 3px solid #040404;
+    background: #ffffff;
+    cursor: pointer;
+    transform-origin: center center;
+    transition:
+        scale 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: scale, filter;
+}
+
+.organization-card__logo-link:hover .organization-card__logo {
+    scale: 1.1;
+}
+
+/* =========================================================
+   TAGS
+   ========================================================= */
+
+.organization-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 23px;
+}
+
+
+/* Tag */
+
+.organization-card__tag {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+
+    padding: 0 15px;
+
+    background: #fefefc;
+
+    border: 1px solid #141414;
+
+    border-radius: 21px;
+
+    color: #4d4f4d;
+
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+    .volunteering {
+        padding: 50px 28px 80px;
+    }
+
+    .volunteering__heading {
+        margin-bottom: 70px;
+    }
+
+    .volunteering__heading h2 {
+        font-size: 56px;
+    }
+
+    .organization-card {
+        height: auto;
+        min-height: 580px;
+    }
+
+    .organization-card__content {
+        grid-template-columns: minmax(260px, 0.8fr) 7px minmax(0, 1fr);
+
+        padding-left: 55px;
+        padding-right: 55px;
+
+        column-gap: 30px;
+    }
+
+    .organization-card__name {
+        width: 100%;
+
+        font-size: 40px;
+    }
+
+    .organization-card__role {
+        font-size: 27px;
+    }
+
+    .organization-card__description {
+        font-size: 24px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .volunteering {
+        min-height: auto;
+
+        padding: 65px 20px 80px;
+    }
+
+    .volunteering__heading {
+        margin-bottom: 45px;
+    }
+
+    .volunteering__heading h2 {
+        font-size: clamp(42px, 10vw, 56px);
+    }
+
+    .volunteering__heading-line {
+        width: 140px;
+        height: 7px;
+
+        margin-top: 14px;
+    }
+
+
+    /* Card */
+
+    .organization-card {
+        height: auto;
+        min-height: 0;
+
+        border-radius: 28px;
+    }
+
+
+    /* Content */
+
+    .organization-card__content {
+        display: flex;
+        flex-direction: column;
+
+        height: auto;
+
+        padding: 42px 30px 40px;
+
+        gap: 30px;
+    }
+
+
+    /* Logo */
+
+    .organization-card__logo-link {
+        width: 76px;
+        height: 76px;
+        top: 28px;
+        right: 28px;
+    }
+
+
+    /* Left */
+
+    .organization-card__left {
+        padding-top: 55px;
+    }
+
+    .organization-card__name {
+        width: calc(100% - 50px);
+
+        font-size: clamp(28px, 7vw, 40px);
+
+        line-height: 1.25;
+    }
+
+    .organization-card__period {
+        margin-top: 35px;
+
+        font-size: 18px;
+    }
+
+
+    /* Divider */
+
+    .organization-card__divider {
+        width: 100%;
+        height: 5px;
+
+        min-height: 5px;
+    }
+
+
+    /* Right */
+
+    .organization-card__right {
+        padding-top: 0;
+    }
+
+    .organization-card__role {
+        font-size: clamp(22px, 5vw, 27px);
+    }
+
+    .organization-card__description {
+        width: 100%;
+
+        margin-top: 28px;
+
+        font-size: clamp(19px, 4.5vw, 24px);
+
+        line-height: 1.5;
+    }
+
+
+    /* Tags */
+
+    .organization-card__tags {
+        margin-top: 25px;
+    }
+
+    .organization-card__tag {
+        min-height: 38px;
+
+        padding: 0 14px;
+
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+    .volunteering {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .organization-card__content {
+        padding: 35px 22px;
+    }
+
+    .organization-card__logo-link {
+        width: 68px;
+        height: 68px;
+        top: 24px;
+        right: 22px;
+    }
+
+    .organization-card__left {
+        padding-top: 48px;
+    }
+
+    .organization-card__name {
+        font-size: 27px;
+    }
+
+    .organization-card__period {
+        font-size: 16px;
+    }
+
+    .organization-card__description {
+        font-size: 18px;
+    }
 }
