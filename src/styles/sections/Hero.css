@@ -1,38 +1,25 @@
 @import "@fontsource/fredoka/600.css";
 @import "@fontsource/fredoka/700.css";
-/* =========================================
-   HERO
-========================================= */
 
 .hero {
   position: relative;
-
   width: 100%;
   min-height: 100vh;
   min-height: 100svh;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 120px 64px 64px;
-
   overflow: hidden;
-
   background: #f3f3f0;
 }
-
-
 /* =========================================
    BACKGROUND
 ========================================= */
-
 .hero__background {
   position: absolute;
   inset: 0;
-
   pointer-events: none;
-
   background:
     radial-gradient(
       circle at 10% 52%,
@@ -59,12 +46,9 @@
     ),
     #f3f3f0;
 }
-
-
 /* =========================================
    CONTENT — CENTER OF VIEWPORT
 ========================================= */
-
 .hero__content {
   position: relative;
   z-index: 1;
