@@ -7,6 +7,7 @@ import Projects from "./sections/Projects";
 import Volunteering from "./sections/Volunteering";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import Achievements from "./sections/Achievements";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Skills />
         <Projects />
         <Volunteering />
+        <Achievements/>
         <Contact />
       </main>
 

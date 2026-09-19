@@ -41,9 +41,11 @@
 .skills__underline {
   display: block;
   width: 226px;
-  height: 6px;
+  height: 9px;
   margin-top: 10px;
-  background: #4c588c;
+  background: linear-gradient(90deg,
+            #051242 0%,
+            #3c4e91 100%);
 }
 
 /* SKILLS GRID */

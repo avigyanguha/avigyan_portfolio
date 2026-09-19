@@ -13,3 +13,9 @@ export interface Organization {
   logo: string;
   tags: string[];
 }
+
+export interface Achievement {
+  title: string;
+  organization: string;
+  date: string;
+}
