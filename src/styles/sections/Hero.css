@@ -13,9 +13,9 @@
   overflow: hidden;
   background: #f3f3f0;
 }
-/* =========================================
-   BACKGROUND
-========================================= */
+
+/* BACKGROUND */
+
 .hero__background {
   position: absolute;
   inset: 0;
@@ -46,226 +46,153 @@
     ),
     #f3f3f0;
 }
-/* =========================================
-   CONTENT — CENTER OF VIEWPORT
-========================================= */
+
+/* CONTENT — CENTER OF VIEWPORT */
+
 .hero__content {
   position: relative;
   z-index: 1;
-
   width: 100%;
   max-width: 1152px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   gap: 48px;
-
   text-align: center;
 }
 
-
-/* =========================================
-   TEXT GROUP
-========================================= */
+/* TEXT GROUP */
 
 .hero__text-group {
   width: 100%;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-
   gap: 24px;
 }
 
-
-/* =========================================
-   TITLE
-========================================= */
+/* TITLE */
 
 .hero__title {
   width: 100%;
   max-width: 1100px;
   white-space: nowrap;
-
   margin: 0;
-
   color: #050505;
-
   text-align: center;
-
   font-family:"Fredoka", sans-serif;
-
   font-size: clamp(48px, 5vw, 72px);
   font-weight: 900;
   line-height: 1.1;
-
   letter-spacing: -1.28px;
-
   text-transform: uppercase;
 }
 
-
-/* =========================================
-   DESCRIPTION
-========================================= */
+/* DESCRIPTION */
 
 .hero__description {
   width: 100%;
   max-width: 960px;
-
   margin: 0;
-
   color: rgba(0, 0, 0, 0.58);
-
   text-align: center;
-
   font-family: "Inter Variable", Inter, sans-serif;
-
   font-size: clamp(18px, 1.8vw, 24px);
   font-weight: 400;
   line-height: 1.45;
 }
 
-
-/* =========================================
-   ACTIONS
-========================================= */
+/* ACTIONS */
 
 .hero__actions {
   display: flex;
   align-items: center;
   justify-content: center;
-
   gap: 16px;
 }
 
-
-/* =========================================
-   CONTACT BUTTON
-========================================= */
+/* CONTACT BUTTON */
 
 .hero__contact-button {
   height: 54px;
-
   padding: 6px 6px 6px 24px;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   gap: 12px;
-
   border-radius: 999px;
-
   background: #050505;
   color: #ffffff;
-
   text-decoration: none;
-
   transition:
     transform 0.25s ease,
     background-color 0.25s ease;
 }
-
 .hero__contact-button:hover {
   transform: translateY(-2px);
   background: #1a1a1a;
 }
-
 .hero__contact-button:active {
   transform: translateY(0);
 }
-
-
 .hero__contact-text {
   font-family: "Inter Variable", Inter, sans-serif;
-
   font-size: 16px;
   font-weight: 700;
   line-height: 1;
-
   text-transform: uppercase;
-
   white-space: nowrap;
 }
-
-
 .hero__contact-icon {
   width: 42px;
   height: 42px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   border-radius: 50%;
-
   background: #ffffff;
   color: #050505;
 }
-
-
 .hero__contact-arrow {
   width: 18px;
   height: 18px;
-
   transition: transform 0.25s ease;
 }
-
 .hero__contact-button:hover .hero__contact-arrow {
   transform: translate(2px, -2px);
 }
 
-
-/* =========================================
-   SOCIAL BUTTONS
-========================================= */
+/* SOCIAL BUTTONS */
 
 .hero__social-button {
   width: 54px;
   height: 54px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-shrink: 0;
-
   border-radius: 50%;
-
   background: #050505;
   color: #ffffff;
-
   text-decoration: none;
-
   transition:
     transform 0.25s ease,
     background-color 0.25s ease;
 }
-
 .hero__social-button:hover {
   transform: translateY(-2px);
   background: #1a1a1a;
 }
-
 .hero__social-button:active {
   transform: translateY(0);
 }
-
-
 .hero__social-icon {
   width: 26px;
   height: 26px;
 }
 
-
-/* =========================================
-   ACCESSIBILITY
-========================================= */
+/* ACCESSIBILITY */
 
 .hero__contact-button:focus-visible,
 .hero__social-button:focus-visible {
@@ -273,101 +200,75 @@
   outline-offset: 4px;
 }
 
-
-/* =========================================
-   TABLET
-========================================= */
+/* TABLET */
 
 @media (max-width: 1024px) {
   .hero {
     padding: 100px 40px 60px;
   }
-
   .hero__content {
     gap: 40px;
   }
-
   .hero__description {
     max-width: 850px;
   }
 }
 
-
-/* =========================================
-   MOBILE
-========================================= */
+/* MOBILE */
 
 @media (max-width: 1024px) {
   .hero {
     padding: 100px 24px 60px;
   }
-
   .hero__content {
     gap: 36px;
   }
-
   .hero__text-group {
     gap: 20px;
   }
-
   .hero__title {
     font-size: clamp(40px, 10vw, 58px);
     white-space: normal;
   }
-
   .hero__description {
     font-size: 18px;
     line-height: 1.5;
   }
 }
 
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
+/* SMALL MOBILE */
 
 @media (max-width: 480px) {
   .hero {
     padding: 90px 18px 50px;
   }
-
   .hero__content {
     gap: 32px;
   }
-
   .hero__title {
     font-size: clamp(36px, 10.5vw, 48px);
   }
-
   .hero__description {
     font-size: 16px;
   }
-
   .hero__actions {
     gap: 10px;
   }
-
   .hero__contact-button {
     height: 52px;
     padding-left: 20px;
   }
-
   .hero__contact-icon {
     width: 40px;
     height: 40px;
   }
-
   .hero__social-button {
     width: 52px;
     height: 52px;
   }
 }
 
-
-/* =========================================
-   REDUCED MOTION
-========================================= */
-
+/* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
   .hero__contact-button,
   .hero__social-button,

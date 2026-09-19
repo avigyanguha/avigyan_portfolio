@@ -40,10 +40,8 @@
             #3c4e91 100%);
 }
 
-/* =========================================================
-   PROJECT LIST
-   ========================================================= */
-
+/* PROJECT LIST */
+   
 .projects-list {
     width: 100%;
     display: flex;
@@ -51,9 +49,7 @@
     gap: 80px;
 }
 
-/* =========================================================
-   PROJECT CARD
-   ========================================================= */
+/* PROJECT CARD */
 
 .project-card {
     width: 100%;
@@ -71,9 +67,7 @@
     flex-direction: row-reverse;
 }
 
-/* =========================================================
-   IMAGE
-   ========================================================= */
+/* IMAGE   */
 
 .project-image-wrapper {
     flex: 1 1 0;
@@ -88,7 +82,6 @@
     height: 100%;
     display: block;
     object-fit: cover;
-
     transition: transform 0.4s ease;
 }
 
@@ -96,9 +89,7 @@
     transform: scale(1.03);
 }
 
-/* =========================================================
-   CONTENT
-   ========================================================= */
+/* CONTENT */
 
 .project-content {
     flex: 1 1 0;
@@ -118,10 +109,8 @@
     gap: 24px;
 }
 
-/* =========================================================
-   PROJECT TITLE
-   ========================================================= */
-
+/* PROJECT TITLE */
+  
 .project-title {
     margin: 0;
     color: #000000;
@@ -132,13 +121,10 @@
     letter-spacing: -1.2px;
 }
 
-/* =========================================================
-   DESCRIPTION
-   ========================================================= */
+/* DESCRIPTION */
 
 .project-description {
     margin: 0;
-
     color: rgba(0, 0, 0, 0.55);
     font-family: "Inter", sans-serif;
     font-size: 20px;
@@ -146,28 +132,21 @@
     line-height: 29px;
 }
 
-/* =========================================================
-   GITHUB BUTTON
-   ========================================================= */
+/* GITHUB BUTTON */
 
 .project-github-button {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-
     padding: 12px 16px;
-
     background: #000000;
     border-radius: 12px;
-
     color: #ffffff;
     font-family: "Inter", sans-serif;
     font-size: 18px;
     font-weight: 600;
     line-height: 26.1px;
-
     text-decoration: none;
-
     transition:
         transform 0.25s ease,
         background 0.25s ease;
@@ -182,133 +161,105 @@
     transform: translateY(0);
 }
 
-/* =========================================================
-   TABLET
-   ========================================================= */
+/* TABLET */
 
 @media (max-width: 900px) {
     .projects {
         min-height: auto;
     }
-
     .projects-inner {
         padding: 80px 40px;
     }
-
     .projects-heading {
         margin-left: 0;
         font-size: 56px;
     }
-
     .project-card {
         gap: 40px;
     }
-
     .project-image-wrapper {
         height: 360px;
     }
-
     .project-content {
         min-height: 360px;
     }
-
     .project-title {
         font-size: 40px;
         line-height: 1.2;
     }
-
     .project-description {
         font-size: 18px;
         line-height: 27px;
     }
 }
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/* MOBILE */
 
 @media (max-width: 650px) {
     .projects {
         min-height: auto;
     }
-
     .projects-inner {
         padding: 70px 20px 80px;
     }
-
     .projects-heading {
         margin: 0 0 40px;
-
         font-size: clamp(44px, 12vw, 56px);
         line-height: 1.1;
         letter-spacing: -1.5px;
     }
-
     .projects-list {
         gap: 70px;
     }
-
     .project-card,
     .project-card--reverse {
         flex-direction: column;
         align-items: stretch;
         gap: 30px;
     }
-
     .project-image-wrapper {
         width: 100%;
         height: auto;
         aspect-ratio: 624 / 432;
         border-radius: 14px;
     }
-
     .project-content {
         width: 100%;
         min-height: auto;
-
         align-items: flex-start;
         gap: 32px;
     }
-
     .project-text {
         gap: 18px;
     }
-
     .project-title {
         font-size: clamp(34px, 9vw, 44px);
         line-height: 1.2;
         letter-spacing: -0.8px;
     }
-
     .project-description {
         font-size: 17px;
         line-height: 26px;
     }
-
     .project-github-button {
         font-size: 17px;
         line-height: 25px;
     }
 }
 
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
+/* SMALL MOBILE */
+   
 @media (max-width: 400px) {
     .projects-inner {
         padding-left: 18px;
         padding-right: 18px;
     }
-
     .projects-heading {
         font-size: 42px;
     }
-
     .project-title {
         font-size: 32px;
     }
-
     .project-description {
         font-size: 16px;
         line-height: 25px;
