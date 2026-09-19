@@ -3,10 +3,12 @@ import { Menu, X } from "lucide-react";
 import "../styles/components/Navbar.css";
 
 const links = [
+  { name: "Home", id: "home" },
   { name: "About", id: "about" },
   { name: "Skills", id: "skills" },
   { name: "Projects", id: "projects" },
-  { name: "Experience", id: "experience" },
+  { name: "Volunteering", id: "volunteering" },
+  { name: "Achievements", id: "achievements" },
   { name: "Contact", id: "contact" },
 ];
 
