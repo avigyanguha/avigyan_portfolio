@@ -1,0 +1,280 @@
+@import "@fontsource/fredoka/600.css";
+@import "@fontsource/fredoka/700.css";
+
+.achievements {
+    position: relative;
+    width: 100%;
+    min-height: 1024px;
+    padding: 78px 40px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+/* =========================================================
+   BACKGROUND BLOBS
+   ========================================================= */
+.achievements__blob {
+    position: absolute;
+    border-radius: 9999px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.achievements__blob--green {
+    width: 871px;
+    height: 785px;
+    left: 20px;
+    top: 155px;
+    background: rgba(191.25, 255, 89.25, 0.16);
+    box-shadow: 95px 95px 95px rgba(191.25, 255, 89.25, 0.16);
+    filter: blur(47.5px);
+}
+
+.achievements__blob--yellow {
+    width: 720px;
+    height: 500px;
+    right: -162px;
+    top: -33px;
+    background: rgba(255, 229.5, 76.5, 0.13);
+    box-shadow: 110px 110px 110px rgba(255, 229.5, 76.5, 0.13);
+    filter: blur(55px);
+}
+
+.achievements__blob--pink {
+    width: 743px;
+    height: 486px;
+    right: -173px;
+    bottom: -66px;
+    background: rgba(255, 140.25, 183.6, 0.11);
+    box-shadow: 105px 105px 105px rgba(255, 140.25, 183.6, 0.11);
+    filter: blur(52.5px);
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+.achievements_heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.achievements__title {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #040404;
+    font-family: "Fredoka", sans-serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.1;
+    text-align: center;
+}
+
+.achievements__underline {
+    display: block;
+    width: 226px;
+    height: 9px;
+    margin-top: 10px;
+    background: linear-gradient(90deg,
+            #051242 0%,
+            #3c4e91 100%);
+}
+
+/* =========================================================
+   ACHIEVEMENT GRID
+   ========================================================= */
+
+.achievements__grid {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 802px;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 324px);
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* =========================================================
+   ACHIEVEMENT CARD
+   ========================================================= */
+
+.achievement-card {
+    width: 324px;
+    min-height: 304px;
+    padding: 35.6px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1.6px solid #000;
+    border-radius: 16px;
+    box-shadow: 4px 4px 0 #000;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: box-shadow 300ms ease;
+}
+
+.achievement-card:hover {
+    box-shadow: 6px 6px 0 #000;
+}
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.achievement-card__title {
+    margin: 0;
+
+    color: #000;
+
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 30px;
+}
+
+/* =========================================================
+   CARD DETAILS
+   ========================================================= */
+
+.achievement-card__details {
+    margin-top: auto;
+    padding-top: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    border-top: 0.8px solid rgba(0, 0, 0, 0.1);
+}
+
+.achievement-card__organization {
+    margin: 0;
+
+    color: rgba(0, 0, 0, 0.8);
+
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.achievement-card__date {
+    margin: 0;
+
+    color: rgba(0, 0, 0, 0.6);
+
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .achievements {
+        min-height: auto;
+        padding: 80px 30px 100px;
+    }
+
+    .achievements__title {
+        font-size: 56px;
+    }
+
+    .achievements__grid {
+        max-width: 680px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+        margin-top: 150px;
+    }
+
+    .achievement-card {
+        width: 100%;
+        min-height: 304px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+    .achievements {
+        padding: 70px 20px 80px;
+    }
+
+    .achievements__title {
+        font-size: clamp(42px, 12vw, 54px);
+    }
+
+    .achievements__grid {
+        width: 100%;
+        max-width: 420px;
+
+        grid-template-columns: 1fr;
+        gap: 28px;
+
+        margin-top: 80px;
+    }
+
+    .achievement-card {
+        width: 100%;
+        min-height: 280px;
+        padding: 30px;
+    }
+
+    .achievement-card__title {
+        font-size: 19px;
+        line-height: 28px;
+    }
+
+    .achievement-card__organization {
+        font-size: 16px;
+        line-height: 26px;
+    }
+
+    /* Keep the background effects contained on mobile */
+    .achievements__blob--green {
+        width: 500px;
+        height: 500px;
+        left: -250px;
+        top: 180px;
+    }
+
+    .achievements__blob--yellow {
+        width: 450px;
+        height: 350px;
+        right: -250px;
+        top: -50px;
+    }
+
+    .achievements__blob--pink {
+        width: 450px;
+        height: 350px;
+        right: -250px;
+        bottom: -100px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+    .achievements {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .achievement-card {
+        padding: 26px;
+    }
+}
