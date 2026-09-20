@@ -1,3 +1,6 @@
+import cIcon from "../assets/icons/c.png";
+import canvaIcon from "../assets/icons/canva.png";
+
 export interface Skill {
   name: string;
   icon: string;
@@ -6,7 +9,7 @@ export interface Skill {
 export const skills: Skill[] = [
   {
     name: "C",
-    icon: "src/assets/icons/c.png",
+    icon: cIcon,
   },
   {
     name: "Python",
@@ -54,6 +57,6 @@ export const skills: Skill[] = [
   },
   {
     name: "Canva",
-    icon: "src/assets/icons/canva.png",
+    icon: canvaIcon,
   },
 ];

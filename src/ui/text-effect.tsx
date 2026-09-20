@@ -215,6 +215,7 @@ type AnimationComponentProps = {
   variants: Variants;
   per: PerType;
   segmentWrapperClassName?: string;
+  customIndex?: number;
 };
 
 const AnimationComponent = React.memo(
@@ -223,6 +224,7 @@ const AnimationComponent = React.memo(
     variants,
     per,
     segmentWrapperClassName,
+    customIndex,
   }: AnimationComponentProps) => {
     const className =
       per === "line"
@@ -230,6 +232,7 @@ const AnimationComponent = React.memo(
         : "inline-block whitespace-pre";
     return (
       <motion.span
+        custom={customIndex}
         variants={variants}
         aria-hidden="true"
         className={cn(
@@ -264,7 +267,6 @@ export function TextEffect({
   segmentTransition,
   style,
 }: TextEffectProps) {
-  const segments = splitText(children, per);
   const MotionTag =
     motion[
       as as keyof typeof motion
@@ -275,6 +277,33 @@ export function TextEffect({
     speedReveal;
   const duration =
     0.3 / speedSegment;
+
+  const itemVariants =
+    per === "char"
+      ? {
+          hidden: (variants?.item ?? baseVariants.item).hidden,
+          visible: (i: number) => {
+            const rawVisible = (variants?.item ?? baseVariants.item).visible as TargetAndTransition;
+            return {
+              ...rawVisible,
+              transition: {
+                ...(hasTransition(rawVisible) ? rawVisible.transition : {}),
+                duration,
+                delay: delay + (typeof i === "number" ? i * stagger : 0),
+                ...segmentTransition,
+              },
+            };
+          },
+          exit: (variants?.item ?? baseVariants.item).exit,
+        }
+      : createVariantsWithTransition(
+          variants?.item ?? baseVariants.item,
+          {
+            duration,
+            ...segmentTransition,
+          },
+        );
+
   const computedVariants = {
     container: {
       ...(variants?.container ??
@@ -283,21 +312,79 @@ export function TextEffect({
         ...(variants?.container?.visible ??
           baseVariants.container.visible),
         transition: {
-          staggerChildren: stagger,
-          delayChildren: delay,
+          staggerChildren: per === "char" ? 0 : stagger,
+          delayChildren: per === "char" ? 0 : delay,
           ...containerTransition,
         },
       },
     },
 
-    item: createVariantsWithTransition(
-      variants?.item ?? baseVariants.item,
-      {
-        duration,
-        ...segmentTransition,
-      },
-    ),
+    item: itemVariants,
   };
+
+  if (per === "char") {
+    const words = children.split(/(\s+)/);
+    let globalCharIndex = 0;
+
+    return (
+      <AnimatePresence mode="popLayout">
+        {trigger && (
+          <MotionTag
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={computedVariants.container}
+            className={className}
+            onAnimationComplete={onAnimationComplete}
+            onAnimationStart={onAnimationStart}
+            style={style}
+          >
+            {/* Accessible text — visually hidden */}
+            <span className="sr-only">{children}</span>
+
+            {/* Animated visible text with unbroken words */}
+            {words.map((word, wIdx) => {
+              if (word.match(/^\s+$/)) {
+                const spaceIndex = globalCharIndex++;
+                return (
+                  <AnimationComponent
+                    key={`space-${wIdx}`}
+                    segment={word}
+                    variants={computedVariants.item}
+                    per={per}
+                    segmentWrapperClassName={segmentWrapperClassName}
+                    customIndex={spaceIndex}
+                  />
+                );
+              }
+              return (
+                <span
+                  key={`word-${wIdx}`}
+                  className="inline-block whitespace-nowrap"
+                >
+                  {word.split("").map((char, cIdx) => {
+                    const charIndex = globalCharIndex++;
+                    return (
+                      <AnimationComponent
+                        key={`char-${wIdx}-${cIdx}`}
+                        segment={char}
+                        variants={computedVariants.item}
+                        per={per}
+                        segmentWrapperClassName={segmentWrapperClassName}
+                        customIndex={charIndex}
+                      />
+                    );
+                  })}
+                </span>
+              );
+            })}
+          </MotionTag>
+        )}
+      </AnimatePresence>
+    );
+  }
+
+  const segments = splitText(children, per);
 
   return (
     <AnimatePresence mode="popLayout">

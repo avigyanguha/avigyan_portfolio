@@ -2,6 +2,13 @@
 
 .navbar-wrapper,
 .mobile-navbar {
+  /* Navbar colours live here instead of using the global --color-text-primary /
+     --color-text-secondary tokens. Those are dark-theme values (#ffffff / #a3a3a3),
+     which render white and grey on this light site. */
+  --nav-text: #050505;
+  --nav-text-muted: rgba(5, 5, 5, 0.75);
+  --nav-accent: #050505;
+
   --nav-glass-bg: rgba(255, 255, 255, 0.55);
   --nav-glass-bg-strong: rgba(255, 255, 255, 0.72);
   --nav-glass-blur: blur(20px) saturate(180%);
@@ -12,6 +19,7 @@
 
 /* Browsers without backdrop-filter get a near-opaque surface instead */
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+
   .navbar-wrapper,
   .mobile-navbar {
     --nav-glass-bg: rgba(255, 255, 255, 0.92);
@@ -65,7 +73,7 @@
   transition: none;
   border: none;
   background: transparent;
-  color: var(--color-text-primary);
+  color: var(--nav-text);
   font-family: "Inter Variable", Inter, sans-serif;
   font-size: 56px;
   font-weight: 900;
@@ -77,7 +85,7 @@
 }
 
 .navbar-logo span {
-  color: var(--color-primary);
+  color: var(--nav-accent);
 }
 
 .navbar-links {
@@ -86,6 +94,7 @@
   align-items: center;
   gap: 12px;
 }
+
 /* Shared sliding hover background */
 .navbar-hover-pill {
   position: absolute;
@@ -120,7 +129,7 @@
   border: none;
   border-radius: 999px;
   background: transparent;
-  color: var(--color-text-secondary);
+  color: var(--nav-text-muted);
   font-family: "Inter Variable", Inter, sans-serif;
   font-size: 16px;
   font-weight: 700;
@@ -130,10 +139,11 @@
 }
 
 .navbar-link:hover {
-  color: var(--color-text-primary);
+  color: var(--nav-text);
 }
+
 /* Active section indicator */
-.navbar-link::after {
+/* .navbar-link::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -141,18 +151,19 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--color-primary);
+  background: var(--nav-accent);
   transform: translateX(-50%) scale(0);
   transition: transform 0.25s ease;
-}
+} */
 
 .navbar-link--active {
-  color: var(--color-text-primary);
+  color: var(--nav-text);
 }
 
-.navbar-link--active::after {
+/* .navbar-link--active::after {
   transform: translateX(-50%) scale(1);
-}
+} */
+
 /* Menu button */
 .navbar-menu-button {
   display: none;
@@ -165,7 +176,7 @@
   border: none;
   border-radius: 50%;
   background: transparent;
-  color: var(--color-text-primary);
+  color: var(--nav-text);
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition:
@@ -180,6 +191,7 @@
 .navbar-menu-button:active {
   transform: scale(0.92);
 }
+
 /* Mobile overlay menu */
 .mobile-navbar {
   position: fixed;
@@ -213,6 +225,7 @@
   pointer-events: auto;
   transform: translateY(0);
 }
+
 .mobile-navbar-links {
   display: flex;
   flex-direction: column;
@@ -228,7 +241,7 @@
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   background: transparent;
-  color: var(--color-text-secondary);
+  color: var(--nav-text-muted);
   font-family: "Inter Variable", Inter, sans-serif;
   font-size: clamp(28px, 8vw, 48px);
   font-weight: 800;
@@ -250,7 +263,7 @@
 }
 
 .mobile-navbar-link span {
-  color: var(--color-primary);
+  color: var(--nav-accent);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -258,7 +271,7 @@
 
 .mobile-navbar-link:hover,
 .mobile-navbar-link--active {
-  color: var(--color-text-primary);
+  color: var(--nav-text);
 }
 
 .mobile-navbar-link--active {
@@ -270,7 +283,7 @@
   justify-content: space-between;
   align-items: flex-end;
   padding-top: 24px;
-  color: var(--color-text-secondary);
+  color: var(--nav-text-muted);
   font-family: "Inter Variable", Inter, sans-serif;
   font-size: 10px;
   letter-spacing: 1.5px;
@@ -278,7 +291,7 @@
 
 .mobile-navbar-footer p {
   margin: 0;
-  color: var(--color-text-primary);
+  color: var(--nav-text);
   font-weight: 800;
 }
 
@@ -312,6 +325,7 @@
 
 /*Mobile / small tablet*/
 @media (max-width: 900px) {
+
   .navbar-wrapper,
   .navbar-wrapper--scrolled {
     padding: 12px 16px;
@@ -367,6 +381,7 @@
 }
 
 @media (max-width: 480px) {
+
   .navbar-wrapper,
   .navbar-wrapper--scrolled {
     padding: 10px 12px;
@@ -411,7 +426,7 @@
 .navbar-link:focus-visible,
 .navbar-menu-button:focus-visible,
 .mobile-navbar-link:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--nav-accent);
 
   outline-offset: 4px;
 }
