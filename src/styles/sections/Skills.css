@@ -130,7 +130,7 @@
   color: #1f1f1f;
   font-family: "Fredoka One", sans-serif;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 200;
   line-height: 1;
   text-align: center;
   white-space: nowrap;
@@ -182,13 +182,6 @@
     padding-left: 30px;
     padding-right: 30px;
   }
-  /*
-     Reset the desktop third-row positioning.
-
-     At this breakpoint the grid changes from 5 columns
-     to 4 columns, so the last three cards should flow
-     normally.
-  */
   .skill-card:nth-child(11),
   .skill-card:nth-child(12),
   .skill-card:nth-child(13) {

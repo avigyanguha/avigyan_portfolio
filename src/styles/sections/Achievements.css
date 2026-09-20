@@ -6,6 +6,8 @@
   height: auto;
   padding: 70px 6% 80px;
   box-sizing: border-box;
+  position: relative;
+  overflow-x: clip;
 }
 
 .achievements-container {

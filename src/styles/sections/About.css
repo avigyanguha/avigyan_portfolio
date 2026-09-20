@@ -176,13 +176,6 @@
 
 /* BUTTON INTERACTION */
 
-/* .resume-button:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 15px 35px rgba(18, 33, 89, 0.28),
-    0 0 35px rgba(116, 190, 255, 0.18);
-} */
-
 .resume-button:active {
     transform: translateY(-1px);
 }
@@ -275,25 +268,25 @@
         text-align: left;
     }
 
-    /* resume button */
+    /* resume button*/
     .resume-button {
-        width: 100%;
-        min-height: 70px;
+        width: min(100%, 280px);
+        min-width: 240px;
+        min-height: 58px;
         margin-top: 38px;
-        padding: 1px;
         border-radius: 16px;
+        -webkit-tap-highlight-color: transparent;
     }
 
-    /* Dark inner surface */
-    .resume-button-surface {
-        min-height: 68px;
-        border-radius: 15px;
+    .resume-button::before {
+        border-radius: 14px;
     }
 
     /* Button content */
     .resume-button-content {
-        gap: 12px;
-        font-size: 16px;
+        min-height: 54px;
+        gap: 14px;
+        font-size: 20px;
     }
 
     .resume-download-icon {
