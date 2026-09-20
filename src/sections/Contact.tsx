@@ -60,9 +60,9 @@ function Contact() {
     if (!message) {
       newErrors.message =
         "Please enter your message.";
-    } else if (message.length < 10) {
+    } else if (message.length < 1) {
       newErrors.message =
-        "Message must be at least 10 characters.";
+        "Message must be at least 1 characters.";
     }
     return newErrors;
   };
