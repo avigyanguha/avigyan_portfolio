@@ -24,15 +24,12 @@ export function Spotlight({
   const containerRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [parentElement, setParentElement] = useState<HTMLElement | null>(null);
-
   const mouseX = useSpring(0, springOptions);
   const mouseY = useSpring(0, springOptions);
-
   const spotlightLeft = useTransform(
     mouseX,
     (x) => `${x - size / 2}px`
   );
-
   const spotlightTop = useTransform(
     mouseY,
     (y) => `${y - size / 2}px`
