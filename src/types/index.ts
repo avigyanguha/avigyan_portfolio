@@ -3,6 +3,7 @@ export interface Project {
   description: string;
   image: string;
   githubUrl: string;
+  demoUrl: string;
 }
 
 export interface Organization {

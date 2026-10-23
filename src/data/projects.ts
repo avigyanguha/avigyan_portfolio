@@ -9,6 +9,7 @@ export const projects: Project[] = [
       "A personal music player designed to play and organize favourite songs through an interactive and visually engaging interface.",
     image: avi8Image,
     githubUrl: "https://github.com/avigyanguha/avi-8-music-player",
+    demoUrl: "https://avi-8.vercel.app/",
   },
   {
     title: "Password Generator.",
@@ -16,5 +17,6 @@ export const projects: Project[] = [
       "A password generator designed to create secure passwords through a simple and user-friendly interface.",
     image: passwordGeneratorImage,
     githubUrl: "https://github.com/avigyanguha/password-generator",
+    demoUrl: "https://avishield.vercel.app/",
   },
 ];
