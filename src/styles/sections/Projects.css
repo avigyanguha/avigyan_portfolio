@@ -2,6 +2,11 @@
 @import "@fontsource/fredoka/700.css";
 
 .projects {
+    --project-github: #172232;
+    --project-github-hover: #121b28;
+    --project-demo: #ff6b16;
+    --project-demo-hover: #cc5612;
+
     width: 100%;
     min-height: 1286px;
     background: #ffffff;
@@ -35,13 +40,13 @@
     width: 164px;
     height: 9px;
     margin: -24px 0 40px 7px;
-     background: linear-gradient(90deg,
+    background: linear-gradient(90deg,
             #051242 0%,
             #3c4e91 100%);
 }
 
 /* PROJECT LIST */
-   
+
 .projects-list {
     width: 100%;
     display: flex;
@@ -67,7 +72,7 @@
     flex-direction: row-reverse;
 }
 
-/* IMAGE   */
+/* IMAGE */
 
 .project-image-wrapper {
     flex: 1 1 0;
@@ -110,7 +115,7 @@
 }
 
 /* PROJECT TITLE */
-  
+
 .project-title {
     margin: 0;
     color: #000000;
@@ -132,33 +137,68 @@
     line-height: 29px;
 }
 
-/* GITHUB BUTTON */
+/* ACTION BUTTONS (GitHub + Live demo) */
 
-.project-github-button {
-    display: inline-flex;
-    justify-content: center;
+.project-actions {
+    display: flex;
     align-items: center;
-    padding: 12px 16px;
-    background: #000000;
-    border-radius: 12px;
+    gap: 20px;
+}
+
+.project-action-button {
+    width: clamp(76px, 6vw, 88px);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    flex: none;
+    border-radius: 50%;
     color: #ffffff;
-    font-family: "Inter", sans-serif;
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 26.1px;
     text-decoration: none;
-    transition:
-        transform 0.25s ease,
-        background 0.25s ease;
+    transition: background-color 180ms ease;
 }
 
-.project-github-button:hover {
-    transform: translateY(-2px);
-    background: #1a1a1a;
+.project-action-button svg {
+    width: 50%;
+    height: auto;
 }
 
-.project-github-button:active {
-    transform: translateY(0);
+/* GitHub */
+
+.project-action-button--github {
+    background: var(--project-github);
+    box-shadow: 0 12px 28px rgb(23 34 50 / 18%);
+}
+
+.project-action-button--github svg {
+    fill: currentColor;
+}
+
+.project-action-button--github:hover {
+    background: var(--project-github-hover);
+}
+
+/* Live demo */
+
+.project-action-button--demo {
+    background: var(--project-demo);
+    box-shadow: 0 12px 28px rgb(255 107 22 / 24%);
+}
+
+.project-action-button--demo svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2.6;
+}
+
+.project-action-button--demo:hover {
+    background: var(--project-demo-hover);
+}
+
+.project-action-button:focus-visible {
+    outline: 3px solid var(--project-demo);
+    outline-offset: 4px;
 }
 
 /* TABLET */
@@ -241,14 +281,16 @@
         font-size: 17px;
         line-height: 26px;
     }
-    .project-github-button {
-        font-size: 17px;
-        line-height: 25px;
+    .project-actions {
+        gap: 16px;
+    }
+    .project-action-button {
+        width: 64px;
     }
 }
 
 /* SMALL MOBILE */
-   
+
 @media (max-width: 400px) {
     .projects-inner {
         padding-left: 18px;
@@ -263,5 +305,12 @@
     .project-description {
         font-size: 16px;
         line-height: 25px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-action-button,
+    .project-image {
+        transition: none;
     }
 }
