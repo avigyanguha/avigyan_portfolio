@@ -123,7 +123,7 @@
 }
 
 .hero__contact-button:hover {
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
   background: #1a1a1a;
 }
 
@@ -180,7 +180,7 @@
 }
 
 .hero__social-button:hover {
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
   background: #1a1a1a;
 }
 
